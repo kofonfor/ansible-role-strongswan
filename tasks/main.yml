@@ -1,11 +1,14 @@
 - name: install strongswan
   apt: name=strongswan
 
+- name: install libstrongswan-extra-plugins
+  apt: name=libstrongswan-extra-plugins
+
 - name: put /etc/ipsec.conf
-  template: src=ipsec.conf dest=/etc/ipsec.conf
+  template: src=ipsec.conf dest=/etc/ipsec.conf backup=yes
 
 - name: put /etc/ipsec.secrets
-  template: src=ipsec.secrets dest=/etc/ipsec.secrets mode=0600
+  template: src=ipsec.secrets dest=/etc/ipsec.secrets mode=0600 backup=yes
 
 - name: start strongswan
   service: name=strongswan state=started enabled=yes
