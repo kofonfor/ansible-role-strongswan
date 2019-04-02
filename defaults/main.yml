@@ -3,3 +3,5 @@ strongswan_rightsubnet: "0.0.0.0/0"
 strongswan_connections:
   L2TP:
     type: transport
+    leftprotoport: "udp/l2tp"
+    rightprotoport: "udp/%any"
