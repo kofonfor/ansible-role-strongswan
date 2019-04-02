@@ -1,2 +1,5 @@
 strongswan_right: "%any"
 strongswan_rightsubnet: "0.0.0.0/0"
+strongswan_connections:
+  L2TP:
+    type: transport
